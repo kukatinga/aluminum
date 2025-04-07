@@ -145,27 +145,119 @@
     </div>
 
     <section id="subscribe" class="container" style="text-align: center; margin: 3rem 0;">
-        <h2>Need Custom Tariff Analysis?</h2>
-            <p>Your Law firm's trade attorneys provide strategic guidance on Section 232 compliance and exemptions.</p>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="John Smith">
-                </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" placeholder="Acme Steel Co.">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="john@acme.com">
-                </div>
-                <div class="form-group">
-                    <label for="inquiry">Inquiry</label>
-                    <textarea id="inquiry" rows="3" placeholder="Describe your tariff-related needs..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Request Legal Consultation</button>
-            </form>
+       <style>
+    /* Form Styles */
+    .consultation-form {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border: 1px solid #e1e5eb;
+    }
+    
+    .consultation-form h2 {
+        color: #2a5f8a;
+        margin-top: 0;
+        font-size: 1.8rem;
+        border-bottom: 2px solid #e3b341;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+    
+    .consultation-form p.subtitle {
+        color: #555;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #2a5f8a;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(42,95,138,0.1);
+    }
+    
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    
+    .submit-btn {
+        background-color: #2a5f8a;
+        color: white;
+        border: none;
+        padding: 14px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+    
+    .submit-btn:hover {
+        background-color: #1d4a6e;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .consultation-form {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<div class="consultation-form">
+    <h2>Need Custom Tariff Analysis?</h2>
+    <p class="subtitle">Your law firm's trade attorneys provide strategic guidance on Section 232 compliance and exemptions.</p>
+    
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="John Smith" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Acme Steel Co." required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@acme.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="inquiry">Inquiry</label>
+            <textarea id="inquiry" rows="4" placeholder="Describe your tariff-related needs (e.g., Section 232 exemptions, anti-dumping cases, customs compliance)..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Request Legal Consultation</button>
+    </form>
+</div>
         <small>For domain purchase inquiries, contact <a href="mailto:steve@domainmont.com">steve@domainmont.com</a></small>
     </section>
 
