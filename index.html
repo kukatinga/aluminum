@@ -1,438 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-    <link rel="icon" href="icons8-aluminum-50.png" type="image/png" sizes="50x50">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-483B01SG5X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-483B01SG5X');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aluminum Tariff Tracker | Premium Trade Law Resource</title>
+    <link rel="icon" href="icons8-aluminum-50.png" type="image/png" sizes="50x50">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-483B01SG5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-483B01SG5X');
+    </script>
     <style>
         :root {
-            --primary: #002b5c; /* Law firm navy */
-            --secondary: #c99700; /* Gold accent */
-            --accent: #9e2b22; /* Urgent red */
+            --primary: #002b5c;
+            --secondary: #c99700;
+            --accent: #9e2b22;
             --light-bg: #f8f9fa;
             --dark-text: #212529;
         }
-        
         body {
             font-family: 'Georgia', serif;
             margin: 0;
-            line-height: 1.6;
             color: var(--dark-text);
+            line-height: 1.6;
+            background: #fff;
         }
-        
-        /* Premium Header */
+        /* Header */
         header {
             background: var(--primary);
-            color: white;
+            color: #fff;
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
-        
         .logo {
-            font-weight: 700;
+            font-weight: bold;
             font-size: 1.5rem;
-            letter-spacing: 0.5px;
         }
-        
         .logo span {
             color: var(--secondary);
         }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: all 0.3s;
+        nav {
+            display: flex;
+            gap: 1rem;
         }
-        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
         nav a:hover {
             color: var(--secondary);
         }
-        
-        /* Hero Section */
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,43,92,0.9), rgba(0,43,92,0.9)), 
-                        url('https://images.unsplash.com/photo-1581093057305-25f0a6d1e125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background: linear-gradient(rgba(0,43,92,0.85), rgba(0,43,92,0.85)),
+                        url('https://images.unsplash.com/photo-1581093057305-25f0a6d1e125?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 5rem 2rem;
+            color: #fff;
+            padding: 5rem 1.5rem;
             text-align: center;
         }
-        
+        .alert-badge {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
         .hero h1 {
             font-size: 2.5rem;
-            max-width: 800px;
-            margin: 0 auto 1rem;
+            margin-bottom: 1rem;
         }
-        
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 2rem;
-            opacity: 0.9;
         }
-        
-        .alert-badge {
-            background: var(--accent);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: 600;
-        }
-        
         .btn {
-            display: inline-block;
             background: var(--secondary);
             color: var(--primary);
             padding: 0.8rem 2rem;
             border-radius: 4px;
+            font-weight: bold;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+            display: inline-block;
+            transition: 0.3s;
         }
-        
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #b08000;
         }
-        
-        /* Main Content */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
         }
-        
         .section-title {
             font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
-        
-        .section-title:after {
+        .section-title::after {
             content: '';
             position: absolute;
+            bottom: -8px;
             left: 0;
-            bottom: -10px;
             width: 50%;
             height: 3px;
             background: var(--secondary);
         }
-        
-        /* Live Tariff Dashboard */
+        /* Dashboard */
         .dashboard {
             background: var(--light-bg);
             border-radius: 8px;
             padding: 2rem;
-            margin: 3rem 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 2rem;
         }
-        
         .filters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
             margin-bottom: 2rem;
         }
-        
         select, input {
+            width: 100%;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 4px;
             font-family: 'Georgia', serif;
         }
-        
         .tariff-table {
             width: 100%;
             border-collapse: collapse;
         }
-        
-        .tariff-table th {
-            background: var(--primary);
-            color: white;
+        .tariff-table th, .tariff-table td {
             padding: 1rem;
+            border: 1px solid #eee;
             text-align: left;
         }
-        
-        .tariff-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
+        .tariff-table th {
+            background: var(--primary);
+            color: #fff;
         }
-        
-        .tariff-table tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-        
         .highlight {
             color: var(--accent);
-            font-weight: 600;
+            font-weight: bold;
         }
-        
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 60px;
+            padding-left: 40px;
             margin: 3rem 0;
         }
-        
-        .timeline:before {
+        .timeline::before {
             content: '';
             position: absolute;
-            left: 30px;
+            left: 20px;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: #ddd;
+            background: #ccc;
         }
-        
         .timeline-item {
             position: relative;
-            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
-            margin-bottom: 1.5rem;
-            background: white;
+            background: #fff;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
         }
-        
         .timeline-date {
             position: absolute;
-            left: -2.5rem;
-            top: 1.5rem;
+            top: 1rem;
+            left: -30px;
             background: var(--secondary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 50px;
         }
-        
-        .timeline-item:after {
-            content: '';
-            position: absolute;
-            left: -2.65rem;
-            top: 2.3rem;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 3px solid white;
-        }
-        
-        /* Acquisition CTA */
+        /* CTA */
         .acquisition-cta {
             background: var(--primary);
-            color: white;
-            padding: 4rem 2rem;
+            color: #fff;
             text-align: center;
+            padding: 4rem 1.5rem;
             margin-top: 3rem;
         }
-        
         .acquisition-cta h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-        
         .acquisition-cta p {
-            max-width: 700px;
+            font-size: 1.2rem;
+            max-width: 600px;
             margin: 0 auto 2rem;
-            opacity: 0.9;
         }
-        
         /* Footer */
         footer {
             background: #001a38;
-            color: white;
-            padding: 3rem 2rem;
+            color: #ccc;
             text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
         }
-        
         .footer-logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-weight: bold;
         }
-        
         .footer-logo span {
             color: var(--secondary);
         }
-        
         .copyright {
-            opacity: 0.7;
-            margin-top: 2rem;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        /* Responsive */
+        @media(max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">ALUMINUM<span>TARIFFS</span>.COM</div>
-            <nav>
-                <a href="#dashboard">Tariff Tracker</a>
-                <a href="#timeline">Policy Timeline</a>
-                <a href="#contact">Acquire Domain</a>
-            </nav>
+
+<header>
+    <div class="header-container">
+        <div class="logo">ALUMINUM<span>TARIFFS</span>.COM</div>
+        <nav>
+            <a href="#dashboard">Tariff Tracker</a>
+            <a href="#timeline">Policy Timeline</a>
+            <a href="#contact">Acquire Domain</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="alert-badge">LATEST: 25% SECTION 232 TARIFFS EFFECTIVE FEB 2025</div>
+    <h1>Definitive Aluminum Tariff Intelligence for Global Trade Practices</h1>
+    <p>Monitor real-time tariff changes, analyze impacts, and advise clients with this turnkey legal resource.</p>
+    <a href="#dashboard" class="btn">Explore Live Dashboard</a>
+</section>
+
+<div class="container">
+    <h2 class="section-title" id="dashboard">Live Aluminum Tariff Tracker</h2>
+    <p>Current Section 232 tariffs and exemptions as of <strong>February 15, 2025</strong>:</p>
+
+    <div class="dashboard">
+        <div class="filters">
+            <div>
+                <label for="country">Country/Region</label>
+                <select id="country">
+                    <option value="all">All Countries</option>
+                    <option value="china">China</option>
+                    <option value="eu">European Union</option>
+                    <option value="canada">Canada</option>
+                    <option value="mexico">Mexico</option>
+                </select>
+            </div>
+            <div>
+                <label for="product">Product Category</label>
+                <select id="product">
+                    <option value="all">All Products</option>
+                    <option value="sheet">Aluminum Sheet</option>
+                    <option value="foil">Aluminum Foil</option>
+                    <option value="extrusions">Extrusions</option>
+                </select>
+            </div>
         </div>
-    </header>
-    
-    <!-- Hero -->
-    <section class="hero">
-        <div class="alert-badge">LATEST: 25% SECTION 232 TARIFFS EFFECTIVE FEB 2025</div>
-        <h1>Definitive Aluminum Tariff Intelligence for Global Trade Practices</h1>
-        <p>Monitor real-time tariff changes, analyze impacts, and advise clients with this turnkey legal resource.</p>
-        <a href="#dashboard" class="btn">Explore Live Dashboard</a>
-    </section>
-    
-    <!-- Main Content -->
-    <div class="container">
-        <h2 class="section-title" id="dashboard">Live Aluminum Tariff Tracker</h2>
-        <p>Current Section 232 tariffs and exemptions as of <strong>February 15, 2025</strong>:</p>
-        
-        <div class="dashboard">
-            <div class="filters">
-                <div>
-                    <label for="country">Country/Region</label>
-                    <select id="country">
-                        <option value="all">All Countries</option>
-                        <option value="china">China</option>
-                        <option value="eu">European Union</option>
-                        <option value="canada">Canada</option>
-                        <option value="mexico">Mexico</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="product">Product Category</label>
-                    <select id="product">
-                        <option value="all">All Products</option>
-                        <option value="sheet">Aluminum Sheet</option>
-                        <option value="foil">Aluminum Foil</option>
-                        <option value="extrusions">Extrusions</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="date">Effective Date</label>
-                    <input type="date" id="date" value="2025-02-15">
-                </div>
-            </div>
-            
-            <table class="tariff-table">
-                <thead>
-                    <tr>
-                        <th>HTS Code</th>
-                        <th>Product Description</th>
-                        <th>Country</th>
-                        <th>Base Rate</th>
-                        <th>Section 232</th>
-                        <th>Total Duty</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>7606.11</td>
-                        <td>Aluminum sheet, not alloyed</td>
-                        <td>China</td>
-                        <td>6.5%</td>
-                        <td class="highlight">25.0%</td>
-                        <td class="highlight">31.5%</td>
-                    </tr>
-                    <tr>
-                        <td>7607.11</td>
-                        <td>Aluminum foil, not backed</td>
-                        <td>Germany</td>
-                        <td>3.2%</td>
-                        <td class="highlight">25.0%</td>
-                        <td class="highlight">28.2%</td>
-                    </tr>
-                    <tr>
-                        <td>7604.21</td>
-                        <td>Aluminum bars/rods</td>
-                        <td>Canada</td>
-                        <td>1.5%</td>
-                        <td>0.0%</td>
-                        <td>1.5%</td>
-                    </tr>
-                    <tr>
-                        <td>7610.90</td>
-                        <td>Aluminum structures</td>
-                        <td>Mexico</td>
-                        <td>2.0%</td>
-                        <td>0.0%</td>
-                        <td>2.0%</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Example Table (you'll add dynamic content later) -->
+        <table class="tariff-table">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Product</th>
+                    <th>Tariff Rate</th>
+                    <th>Effective Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>China</td>
+                    <td>Aluminum Sheet</td>
+                    <td class="highlight">25%</td>
+                    <td>Feb 15, 2025</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="section-title" id="timeline">Policy Timeline</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2025</div>
+            <p>New 25% Section 232 aluminum tariffs announced and implemented.</p>
         </div>
-        
-        <h2 class="section-title" id="timeline">Section 232 Aluminum Tariff Timeline</h2>
-        <p>Key policy developments and legal implications:</p>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Mar 2018</div>
-                <h3>Initial Section 232 Tariffs Imposed</h3>
-                <p>10% global tariff on aluminum imports under Section 232 of the Trade Expansion Act. Immediate exemptions for Canada and Mexico created complex compliance requirements.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Jan 2020</div>
-                <h3>TRQ System Implementation</h3>
-                <p>Tariff-rate quotas established for EU, UK, and Japan, replacing absolute tariffs. Created new administrative law challenges and exclusion request opportunities.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Feb 2025</div>
-                <h3>New Executive Orders</h3>
-                <p>All remaining exemptions eliminated, duties increased to 25%, and product scope expanded to include aluminum derivatives. Expected to generate significant litigation.</p>
-            </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2024</div>
+            <p>Policy revisions begin, consultations between major economies.</p>
         </div>
     </div>
-    
-    <!-- Acquisition CTA -->
-    <section class="acquisition-cta" id="contact">
-        <h2>This Domain and Platform Are Available for Acquisition</h2>
-        <p>AluminumTariffs.com represents a turnkey solution for law firms seeking to establish market leadership in Section 232 trade matters. The complete package includes:</p>
-        <ul style="max-width: 600px; margin: 1rem auto 2rem; text-align: left; opacity: 0.9;">
-            <li>Premium domain with established SEO value</li>
-            <li>Custom tariff tracking infrastructure</li>
-            <li>Client-ready dashboards and reporting tools</li>
-            <li>Regulatory alert systems</li>
-        </ul>
-        <a href="mailto:acquisition@aluminumtariffs.com?subject=Domain%20Acquisition%20Inquiry" class="btn">Request Acquisition Details</a>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">ALUMINUM<span>TARIFFS</span>.COM</div>
-        <p>A premium resource for international trade practices</p>
-        <div class="copyright">
-            &copy; 2025 All rights reserved
-        </div>
-    </footer>
+</div>
+
+<section class="acquisition-cta" id="contact">
+    <h2>Interested in Owning This Premium Domain?</h2>
+    <p>AluminumTariffs.com is available for acquisition. Secure your authority in the international trade arena today!</p>
+    <a href="mailto:contact@example.com" class="btn">Inquire Now</a>
+</section>
+
+<footer>
+    <div class="footer-logo">ALUMINUM<span>TARIFFS</span>.COM</div>
+    <div class="copyright">
+        © 2025 AluminumTariffs.com. All Rights Reserved.
+    </div>
+</footer>
+
 </body>
 </html>
