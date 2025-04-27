@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <link rel="icon" href="icons8-aluminum-50.png" type="image/png" sizes="50x50">
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-483B01SG5X"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-483B01SG5X');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-483B01SG5X');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aluminum Tariff Tracker | Premium Trade Law Resource</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #002b5c; /* Law firm navy */
@@ -20,16 +23,28 @@
             --accent: #9e2b22; /* Urgent red */
             --light-bg: #f8f9fa;
             --dark-text: #212529;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
         }
-
+        
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             line-height: 1.6;
             color: var(--dark-text);
-            -webkit-font-smoothing: antialiased; /* Improve font rendering for smoother text */
+            overflow-x: hidden;
         }
-
+        
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            margin-top: 0;
+        }
+        
         /* Premium Header */
         header {
             background: var(--primary);
@@ -40,423 +55,595 @@
             top: 0;
             z-index: 100;
         }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem; /* Adjust padding for mobile */
+            padding: 0 1.5rem;
         }
-
+        
         .logo {
             font-weight: 700;
-            font-size: 1.2rem; /* Slightly smaller for mobile */
+            font-size: 1.25rem;
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
-
+        
         .logo span {
             color: var(--secondary);
         }
-
+        
         nav {
-            display: flex; /* Use flex for mobile navigation */
+            display: flex;
+            align-items: center;
         }
-
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 1rem; /* Adjust spacing for mobile */
-            font-weight: 500;
-            transition: all 0.3s;
-            font-size: 0.9rem; /* Slightly smaller for mobile */
+            margin-left: 1.25rem;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
-
+        
         nav a:hover {
             color: var(--secondary);
         }
-
+        
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,43,92,0.9), rgba(0,43,92,0.9)),
+            background: linear-gradient(rgba(0,43,92,0.9), rgba(0,43,92,0.9)), 
                         url('https://images.unsplash.com/photo-1581093057305-25f0a6d1e125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 3rem 1rem; /* Adjust padding for mobile */
+            padding: 4rem 1.5rem;
             text-align: center;
         }
-
+        
         .hero h1 {
-            font-size: 2rem; /* Slightly smaller for mobile */
-            max-width: 95%; /* Ensure text wraps on smaller screens */
+            font-size: 2rem;
+            max-width: 800px;
             margin: 0 auto 1rem;
+            line-height: 1.3;
         }
-
+        
         .hero p {
-            font-size: 1rem; /* Slightly smaller for mobile */
-            max-width: 90%; /* Ensure text wraps on smaller screens */
+            font-size: 1.1rem;
+            max-width: 700px;
             margin: 0 auto 2rem;
             opacity: 0.9;
         }
-
+        
         .alert-badge {
             background: var(--accent);
             color: white;
-            padding: 0.5rem 1rem; /* Adjust padding for mobile */
+            padding: 0.5rem 1.25rem;
             border-radius: 4px;
             display: inline-block;
-            margin-bottom: 1.5rem; /* Adjust margin for mobile */
-            font-weight: 600;
-            font-size: 0.85rem; /* Slightly smaller for mobile */
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
         }
-
+        
         .btn {
             display: inline-block;
             background: var(--secondary);
             color: var(--primary);
-            padding: 0.8rem 1.5rem; /* Adjust padding for mobile */
-            border-radius: 4px;
+            padding: 0.8rem 1.75rem;
+            border-radius: var(--border-radius);
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 0.9rem; /* Slightly smaller for mobile */
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
-
+        
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-
+        
         /* Main Content */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem; /* Adjust padding for mobile */
+            padding: 3rem 1.5rem;
         }
-
+        
         .section-title {
-            font-size: 1.75rem; /* Slightly smaller for mobile */
+            font-size: 1.75rem;
             color: var(--primary);
-            margin-bottom: 1.5rem; /* Adjust margin for mobile */
+            margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
-
+        
         .section-title:after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -8px; /* Adjust bottom for mobile */
-            width: 40%; /* Slightly smaller width for mobile */
+            bottom: -8px;
+            width: 50%;
             height: 3px;
             background: var(--secondary);
         }
-
+        
         /* Live Tariff Dashboard */
         .dashboard {
             background: var(--light-bg);
-            border-radius: 8px;
-            padding: 1.5rem; /* Adjust padding for mobile */
-            margin: 2rem 0; /* Adjust margin for mobile */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            box-shadow: var(--box-shadow);
+            overflow-x: auto;
         }
-
+        
         .filters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* More flexible for mobile */
-            gap: 0.75rem; /* Adjust gap for mobile */
-            margin-bottom: 1.5rem; /* Adjust margin for mobile */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
-
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
         select, input {
-            padding: 0.6rem; /* Adjust padding for mobile */
+            width: 100%;
+            padding: 0.75rem;
             border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Georgia', serif;
-            font-size: 0.9rem; /* Slightly smaller for mobile */
+            border-radius: var(--border-radius);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            background: white;
         }
-
+        
         .tariff-table {
             width: 100%;
             border-collapse: collapse;
-            overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
-            display: block; /* Ensures overflow works correctly */
+            min-width: 600px;
         }
-
+        
         .tariff-table th {
             background: var(--primary);
             color: white;
-            padding: 0.75rem; /* Adjust padding for mobile */
+            padding: 0.9rem;
             text-align: left;
-            font-size: 0.85rem; /* Slightly smaller for mobile */
+            font-weight: 600;
+            font-size: 0.9rem;
         }
-
+        
         .tariff-table td {
-            padding: 0.75rem; /* Adjust padding for mobile */
+            padding: 0.9rem;
             border-bottom: 1px solid #eee;
-            font-size: 0.85rem; /* Slightly smaller for mobile */
-            white-space: nowrap; /* Prevent text wrapping in table cells */
+            font-size: 0.95rem;
         }
-
+        
         .tariff-table tr:nth-child(even) {
             background: #f9f9f9;
         }
-
+        
         .highlight {
             color: var(--accent);
-            font-weight: 600;
+            font-weight: 700;
         }
-
+        
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 30px; /* Adjust padding for mobile */
-            margin: 2rem 0; /* Adjust margin for mobile */
+            padding-left: 40px;
+            margin: 2.5rem 0;
         }
-
+        
         .timeline:before {
             content: '';
             position: absolute;
-            left: 15px; /* Adjust left for mobile */
+            left: 20px;
             top: 0;
             bottom: 0;
             width: 2px;
             background: #ddd;
         }
-
+        
         .timeline-item {
             position: relative;
-            padding: 1rem 1rem 1rem 2rem; /* Adjust padding for mobile */
-            margin-bottom: 1rem; /* Adjust margin for mobile */
+            padding: 1.25rem 1.25rem 1.25rem 2rem;
+            margin-bottom: 1.25rem;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
-
+        
         .timeline-date {
             position: absolute;
-            left: -1.5rem; /* Adjust left for mobile */
-            top: 1rem; /* Adjust top for mobile */
+            left: -1.5rem;
+            top: 1.25rem;
             background: var(--secondary);
             color: white;
-            padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
+            padding: 0.4rem 0.8rem;
             border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.75rem; /* Smaller for mobile */
+            font-weight: 700;
+            font-size: 0.8rem;
+            white-space: nowrap;
         }
-
+        
         .timeline-item:after {
             content: '';
             position: absolute;
-            left: -1.6rem; /* Adjust left for mobile */
-            top: 1.6rem; /* Adjust top for mobile */
-            width: 10px; /* Smaller for mobile */
-            height: 10px; /* Smaller for mobile */
+            left: -1.6rem;
+            top: 1.8rem;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: var(--primary);
-            border: 2px solid white; /* Smaller border for mobile */
+            border: 3px solid white;
         }
-
-        .timeline h3 {
-            font-size: 1rem; /* Smaller for mobile */
-            margin-top: 0;
+        
+        .timeline-item h3 {
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
-
-        .timeline p {
-            font-size: 0.85rem; /* Smaller for mobile */
-            line-height: 1.4;
-        }
-
+        
         /* Acquisition CTA */
         .acquisition-cta {
             background: var(--primary);
             color: white;
-            padding: 3rem 1rem; /* Adjust padding for mobile */
+            padding: 3rem 1.5rem;
             text-align: center;
-            margin-top: 2rem; /* Adjust margin for mobile */
+            margin-top: 2rem;
         }
-
+        
         .acquisition-cta h2 {
-            font-size: 1.75rem; /* Slightly smaller for mobile */
-            margin-bottom: 0.75rem; /* Adjust margin for mobile */
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
         }
-
+        
         .acquisition-cta p {
-            max-width: 90%; /* Ensure text wraps on smaller screens */
-            margin: 0 auto 1.5rem; /* Adjust margin for mobile */
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
             opacity: 0.9;
-            font-size: 0.9rem; /* Slightly smaller for mobile */
         }
-
+        
         .acquisition-cta ul {
-            max-width: 90%; /* Ensure list wraps on smaller screens */
-            margin: 1rem auto 1.5rem; /* Adjust margin for mobile */
+            max-width: 600px;
+            margin: 1rem auto 1.5rem;
             text-align: left;
             opacity: 0.9;
             padding-left: 1.5rem;
-            font-size: 0.9rem; /* Slightly smaller for mobile */
         }
-
+        
         .acquisition-cta li {
             margin-bottom: 0.5rem;
         }
-
+        
         /* Footer */
         footer {
             background: #001a38;
             color: white;
-            padding: 2rem 1rem; /* Adjust padding for mobile */
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            font-size: 0.85rem; /* Slightly smaller for mobile */
         }
-
+        
         .footer-logo {
-            font-size: 1.2rem; /* Slightly smaller for mobile */
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 0.75rem; /* Adjust margin for mobile */
+            margin-bottom: 1rem;
         }
-
+        
         .footer-logo span {
             color: var(--secondary);
         }
-
+        
         .copyright {
             opacity: 0.7;
-            margin-top: 1.5rem; /* Adjust margin for mobile */
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
         }
-
-        /* Media Query for larger screens (optional, but good practice) */
-        @media (min-width: 768px) {
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            padding: 1rem;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-weight: 600;
+        }
+        
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
             .header-container {
-                padding: 0 2rem;
+                padding: 0 1rem;
             }
-            .logo {
-                font-size: 1.5rem;
+            
+            .desktop-nav {
+                display: none;
             }
-            nav a {
-                margin-left: 1.5rem;
-                font-size: 1rem;
+            
+            .mobile-menu-btn {
+                display: block;
             }
+            
             .hero {
-                padding: 5rem 2rem;
+                padding: 3rem 1rem;
             }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.75rem;
             }
+            
             .hero p {
-                font-size: 1.2rem;
-            }
-            .alert-badge {
-                padding: 0.5rem 1.5rem;
-                margin-bottom: 2rem;
-                font-size: 0.9rem;
-            }
-            .btn {
-                padding: 0.8rem 2rem;
                 font-size: 1rem;
             }
+            
             .container {
-                padding: 4rem 2rem;
+                padding: 2rem 1rem;
             }
+            
             .section-title {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-            .section-title:after {
-                bottom: -10px;
-                width: 50%;
-            }
-            .dashboard {
-                padding: 2rem;
-                margin: 3rem 0;
-            }
-            .filters {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-                margin-bottom: 2rem;
-            }
-            select, input {
-                padding: 0.8rem;
-                font-size: 1rem;
-            }
-            .tariff-table th {
-                padding: 1rem;
-                font-size: 1rem;
-            }
-            .tariff-table td {
-                padding: 1rem;
-                font-size: 1rem;
-            }
-            .timeline {
-                padding-left: 60px;
-                margin: 3rem 0;
-            }
-            .timeline:before {
-                left: 30px;
-            }
-            .timeline-item {
-                padding: 1.5rem 1.5rem 1.5rem 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .timeline-date {
-                left: -2.5rem;
-                top: 1.5rem;
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            .timeline-item:after {
-                left: -2.65rem;
-                top: 2.3rem;
-                width: 12px;
-                height: 12px;
-                border: 3px solid white;
-            }
-            .timeline h3 {
-                font-size: 1.2rem;
-            }
-            .timeline p {
-                font-size: 1rem;
-            }
-            .acquisition-cta {
-                padding: 4rem 2rem;
-                margin-top: 3rem;
-            }
-            .acquisition-cta h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-            .acquisition-cta p {
-                max-width: 700px;
-                margin: 0 auto 2rem;
-                font-size: 1.2rem;
-            }
-            .acquisition-cta ul {
-                max-width: 600px;
-                margin: 1rem auto 2rem;
-                font-size: 1rem;
-                padding-left: 2rem;
-            }
-            .footer {
-                padding: 3rem 2rem;
-                font-size: 1rem;
-            }
-            .footer-logo {
                 font-size: 1.5rem;
-                margin-bottom: 1rem;
             }
-            .copyright {
-                margin-top: 2rem;
+            
+            .filters {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline:before {
+                left: 15px;
+            }
+            
+            .timeline-date {
+                left: -1.25rem;
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+            }
+            
+            .timeline-item:after {
+                left: -1.35rem;
+                top: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">ALUMINUM<span>TARIFFS</span>.COM</div>
-            <nav>
+            <nav class="desktop-nav">
                 <a href="#dashboard">Tariff Tracker</a>
-                <a href="#timeline
+                <a href="#timeline">Policy Timeline</a>
+                <a href="#contact">Acquire Domain</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#dashboard">Tariff Tracker</a>
+        <a href="#timeline">Policy Timeline</a>
+        <a href="#contact">Acquire Domain</a>
+    </div>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="alert-badge">LATEST: 25% SECTION 232 TARIFFS EFFECTIVE FEB 2025</div>
+        <h1>Definitive Aluminum Tariff Intelligence for Global Trade Practices</h1>
+        <p>Monitor real-time tariff changes, analyze impacts, and advise clients with this turnkey legal resource.</p>
+        <a href="#dashboard" class="btn">Explore Live Dashboard</a>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title" id="dashboard">Live Aluminum Tariff Tracker</h2>
+        <p>Current Section 232 tariffs and exemptions as of <strong>February 15, 2025</strong>:</p>
+        
+        <div class="dashboard">
+            <div class="filters">
+                <div>
+                    <label for="country">Country/Region</label>
+                    <select id="country">
+                        <option value="all">All Countries</option>
+                        <option value="china">China</option>
+                        <option value="eu">European Union</option>
+                        <option value="canada">Canada</option>
+                        <option value="mexico">Mexico</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="product">Product Category</label>
+                    <select id="product">
+                        <option value="all">All Products</option>
+                        <option value="sheet">Aluminum Sheet</option>
+                        <option value="foil">Aluminum Foil</option>
+                        <option value="extrusions">Extrusions</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="date">Effective Date</label>
+                    <input type="date" id="date" value="2025-02-15">
+                </div>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table class="tariff-table">
+                    <thead>
+                        <tr>
+                            <th>HTS Code</th>
+                            <th>Product Description</th>
+                            <th>Country</th>
+                            <th>Base Rate</th>
+                            <th>Section 232</th>
+                            <th>Total Duty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7606.11</td>
+                            <td>Aluminum sheet, not alloyed</td>
+                            <td>China</td>
+                            <td>6.5%</td>
+                            <td class="highlight">25.0%</td>
+                            <td class="highlight">31.5%</td>
+                        </tr>
+                        <tr>
+                            <td>7607.11</td>
+                            <td>Aluminum foil, not backed</td>
+                            <td>Germany</td>
+                            <td>3.2%</td>
+                            <td class="highlight">25.0%</td>
+                            <td class="highlight">28.2%</td>
+                        </tr>
+                        <tr>
+                            <td>7604.21</td>
+                            <td>Aluminum bars/rods</td>
+                            <td>Canada</td>
+                            <td>1.5%</td>
+                            <td>0.0%</td>
+                            <td>1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>7610.90</td>
+                            <td>Aluminum structures</td>
+                            <td>Mexico</td>
+                            <td>2.0%</td>
+                            <td>0.0%</td>
+                            <td>2.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <h2 class="section-title" id="timeline">Section 232 Aluminum Tariff Timeline</h2>
+        <p>Key policy developments and legal implications:</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Mar 2018</div>
+                <h3>Initial Section 232 Tariffs Imposed</h3>
+                <p>10% global tariff on aluminum imports under Section 232 of the Trade Expansion Act. Immediate exemptions for Canada and Mexico created complex compliance requirements.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 2020</div>
+                <h3>TRQ System Implementation</h3>
+                <p>Tariff-rate quotas established for EU, UK, and Japan, replacing absolute tariffs. Created new administrative law challenges and exclusion request opportunities.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 2025</div>
+                <h3>New Executive Orders</h3>
+                <p>All remaining exemptions eliminated, duties increased to 25%, and product scope expanded to include aluminum derivatives. Expected to generate significant litigation.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Acquisition CTA -->
+    <section class="acquisition-cta" id="contact">
+        <h2>This Domain and Platform Are Available for Acquisition</h2>
+        <p>AluminumTariffs.com represents a turnkey solution for law firms seeking to establish market leadership in Section 232 trade matters. The complete package includes:</p>
+        <ul>
+            <li>Premium domain with established SEO value</li>
+            <li>Custom tariff tracking infrastructure</li>
+            <li>Client-ready dashboards and reporting tools</li>
+            <li>Regulatory alert systems</li>
+        </ul>
+        <a href="mailto:acquisition@aluminumtariffs.com?subject=Domain%20Acquisition%20Inquiry" class="btn">Request Acquisition Details</a>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">ALUMINUM<span>TARIFFS</span>.COM</div>
+        <p>A premium resource for international trade practices</p>
+        <div class="copyright">
+            &copy; 2025 All rights reserved
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
