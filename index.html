@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <link rel="icon" href="icons8-aluminum-50.png" type="image/png" sizes="50x50">
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-483B01SG5X"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+
         gtag('config', 'G-483B01SG5X');
     </script>
     <meta charset="UTF-8">
@@ -21,14 +21,16 @@
             --light-bg: #f8f9fa;
             --dark-text: #212529;
         }
+
         body {
             font-family: 'Georgia', serif;
             margin: 0;
             line-height: 1.6;
             color: var(--dark-text);
+            -webkit-font-smoothing: antialiased; /* Improve font rendering for smoother text */
         }
 
-        /* Header */
+        /* Premium Header */
         header {
             background: var(--primary);
             color: white;
@@ -38,73 +40,90 @@
             top: 0;
             z-index: 100;
         }
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1rem; /* Adjust padding for mobile */
         }
+
         .logo {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* Slightly smaller for mobile */
             letter-spacing: 0.5px;
         }
+
         .logo span {
             color: var(--secondary);
         }
+
+        nav {
+            display: flex; /* Use flex for mobile navigation */
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 1rem;
+            margin-left: 1rem; /* Adjust spacing for mobile */
             font-weight: 500;
             transition: all 0.3s;
+            font-size: 0.9rem; /* Slightly smaller for mobile */
         }
+
         nav a:hover {
             color: var(--secondary);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,43,92,0.9), rgba(0,43,92,0.9)), 
+            background: linear-gradient(rgba(0,43,92,0.9), rgba(0,43,92,0.9)),
                         url('https://images.unsplash.com/photo-1581093057305-25f0a6d1e125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 3rem 1rem;
+            padding: 3rem 1rem; /* Adjust padding for mobile */
             text-align: center;
         }
+
         .hero h1 {
-            font-size: 2rem;
-            max-width: 800px;
+            font-size: 2rem; /* Slightly smaller for mobile */
+            max-width: 95%; /* Ensure text wraps on smaller screens */
             margin: 0 auto 1rem;
         }
+
         .hero p {
-            font-size: 1rem;
-            max-width: 700px;
+            font-size: 1rem; /* Slightly smaller for mobile */
+            max-width: 90%; /* Ensure text wraps on smaller screens */
             margin: 0 auto 2rem;
             opacity: 0.9;
         }
+
         .alert-badge {
             background: var(--accent);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1rem; /* Adjust padding for mobile */
             border-radius: 4px;
             display: inline-block;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Adjust margin for mobile */
             font-weight: 600;
+            font-size: 0.85rem; /* Slightly smaller for mobile */
         }
+
         .btn {
             display: inline-block;
             background: var(--secondary);
             color: var(--primary);
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.5rem; /* Adjust padding for mobile */
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            font-size: 0.9rem; /* Slightly smaller for mobile */
         }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -114,21 +133,23 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2rem 1rem; /* Adjust padding for mobile */
         }
+
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.75rem; /* Slightly smaller for mobile */
             color: var(--primary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Adjust margin for mobile */
             position: relative;
             display: inline-block;
         }
+
         .section-title:after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -10px;
-            width: 50%;
+            bottom: -8px; /* Adjust bottom for mobile */
+            width: 40%; /* Slightly smaller width for mobile */
             height: 3px;
             background: var(--secondary);
         }
@@ -137,42 +158,52 @@
         .dashboard {
             background: var(--light-bg);
             border-radius: 8px;
-            padding: 1rem;
-            margin: 2rem 0;
+            padding: 1.5rem; /* Adjust padding for mobile */
+            margin: 2rem 0; /* Adjust margin for mobile */
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
+
         .filters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* More flexible for mobile */
+            gap: 0.75rem; /* Adjust gap for mobile */
+            margin-bottom: 1.5rem; /* Adjust margin for mobile */
         }
+
         select, input {
-            padding: 0.6rem;
+            padding: 0.6rem; /* Adjust padding for mobile */
             border: 1px solid #ddd;
             border-radius: 4px;
             font-family: 'Georgia', serif;
-            font-size: 0.9rem;
+            font-size: 0.9rem; /* Slightly smaller for mobile */
         }
+
         .tariff-table {
             width: 100%;
             border-collapse: collapse;
+            overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+            display: block; /* Ensures overflow works correctly */
         }
+
         .tariff-table th {
             background: var(--primary);
             color: white;
-            padding: 0.8rem;
+            padding: 0.75rem; /* Adjust padding for mobile */
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Slightly smaller for mobile */
         }
+
         .tariff-table td {
-            padding: 0.8rem;
+            padding: 0.75rem; /* Adjust padding for mobile */
             border-bottom: 1px solid #eee;
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Slightly smaller for mobile */
+            white-space: nowrap; /* Prevent text wrapping in table cells */
         }
+
         .tariff-table tr:nth-child(even) {
             background: #f9f9f9;
         }
+
         .highlight {
             color: var(--accent);
             font-weight: 600;
@@ -181,270 +212,251 @@
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 40px;
-            margin: 2rem 0;
+            padding-left: 30px; /* Adjust padding for mobile */
+            margin: 2rem 0; /* Adjust margin for mobile */
         }
+
         .timeline:before {
             content: '';
             position: absolute;
-            left: 20px;
+            left: 15px; /* Adjust left for mobile */
             top: 0;
             bottom: 0;
             width: 2px;
             background: #ddd;
         }
+
         .timeline-item {
             position: relative;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            padding: 1rem 1rem 1rem 2rem; /* Adjust padding for mobile */
+            margin-bottom: 1rem; /* Adjust margin for mobile */
             background: white;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
+
         .timeline-date {
             position: absolute;
-            left: -2.5rem;
-            top: 1rem;
+            left: -1.5rem; /* Adjust left for mobile */
+            top: 1rem; /* Adjust top for mobile */
             background: var(--secondary);
             color: white;
-            padding: 0.4rem 0.8rem;
+            padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
             border-radius: 999px;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.75rem; /* Smaller for mobile */
         }
+
         .timeline-item:after {
             content: '';
             position: absolute;
-            left: -2.65rem;
-            top: 1.6rem;
-            width: 10px;
-            height: 10px;
+            left: -1.6rem; /* Adjust left for mobile */
+            top: 1.6rem; /* Adjust top for mobile */
+            width: 10px; /* Smaller for mobile */
+            height: 10px; /* Smaller for mobile */
             border-radius: 50%;
             background: var(--primary);
-            border: 2px solid white;
+            border: 2px solid white; /* Smaller border for mobile */
+        }
+
+        .timeline h3 {
+            font-size: 1rem; /* Smaller for mobile */
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline p {
+            font-size: 0.85rem; /* Smaller for mobile */
+            line-height: 1.4;
         }
 
         /* Acquisition CTA */
         .acquisition-cta {
             background: var(--primary);
             color: white;
-            padding: 3rem 1rem;
+            padding: 3rem 1rem; /* Adjust padding for mobile */
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 2rem; /* Adjust margin for mobile */
         }
+
         .acquisition-cta h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.75rem; /* Slightly smaller for mobile */
+            margin-bottom: 0.75rem; /* Adjust margin for mobile */
         }
+
         .acquisition-cta p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            max-width: 90%; /* Ensure text wraps on smaller screens */
+            margin: 0 auto 1.5rem; /* Adjust margin for mobile */
             opacity: 0.9;
-            font-size: 0.9rem;
+            font-size: 0.9rem; /* Slightly smaller for mobile */
+        }
+
+        .acquisition-cta ul {
+            max-width: 90%; /* Ensure list wraps on smaller screens */
+            margin: 1rem auto 1.5rem; /* Adjust margin for mobile */
+            text-align: left;
+            opacity: 0.9;
+            padding-left: 1.5rem;
+            font-size: 0.9rem; /* Slightly smaller for mobile */
+        }
+
+        .acquisition-cta li {
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
         footer {
             background: #001a38;
             color: white;
-            padding: 2rem 1rem;
+            padding: 2rem 1rem; /* Adjust padding for mobile */
             text-align: center;
+            font-size: 0.85rem; /* Slightly smaller for mobile */
         }
+
         .footer-logo {
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Slightly smaller for mobile */
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem; /* Adjust margin for mobile */
         }
+
         .footer-logo span {
             color: var(--secondary);
         }
+
         .copyright {
             opacity: 0.7;
-            margin-top: 1rem;
-            font-size: 0.8rem;
+            margin-top: 1.5rem; /* Adjust margin for mobile */
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
+        /* Media Query for larger screens (optional, but good practice) */
+        @media (min-width: 768px) {
+            .header-container {
+                padding: 0 2rem;
+            }
+            .logo {
                 font-size: 1.5rem;
+            }
+            nav a {
+                margin-left: 1.5rem;
+                font-size: 1rem;
+            }
+            .hero {
+                padding: 5rem 2rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
             }
             .hero p {
+                font-size: 1.2rem;
+            }
+            .alert-badge {
+                padding: 0.5rem 1.5rem;
+                margin-bottom: 2rem;
                 font-size: 0.9rem;
             }
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            .container {
+                padding: 4rem 2rem;
+            }
             .section-title {
-                font-size: 1.5rem;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            .section-title:after {
+                bottom: -10px;
+                width: 50%;
+            }
+            .dashboard {
+                padding: 2rem;
+                margin: 3rem 0;
             }
             .filters {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                margin-bottom: 2rem;
             }
-            .tariff-table th, .tariff-table td {
-                font-size: 0.8rem;
-                padding: 0.6rem;
+            select, input {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+            .tariff-table th {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            .tariff-table td {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            .timeline {
+                padding-left: 60px;
+                margin: 3rem 0;
+            }
+            .timeline:before {
+                left: 30px;
+            }
+            .timeline-item {
+                padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+                margin-bottom: 1.5rem;
             }
             .timeline-date {
-                left: -2rem;
-                top: 0.8rem;
-                font-size: 0.7rem;
-                padding: 0.3rem 0.6rem;
+                left: -2.5rem;
+                top: 1.5rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
             .timeline-item:after {
-                left: -2.2rem;
-                top: 1.2rem;
-                width: 8px;
-                height: 8px;
+                left: -2.65rem;
+                top: 2.3rem;
+                width: 12px;
+                height: 12px;
+                border: 3px solid white;
+            }
+            .timeline h3 {
+                font-size: 1.2rem;
+            }
+            .timeline p {
+                font-size: 1rem;
+            }
+            .acquisition-cta {
+                padding: 4rem 2rem;
+                margin-top: 3rem;
             }
             .acquisition-cta h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
+                margin-bottom: 1rem;
             }
             .acquisition-cta p {
-                font-size: 0.8rem;
+                max-width: 700px;
+                margin: 0 auto 2rem;
+                font-size: 1.2rem;
+            }
+            .acquisition-cta ul {
+                max-width: 600px;
+                margin: 1rem auto 2rem;
+                font-size: 1rem;
+                padding-left: 2rem;
+            }
+            .footer {
+                padding: 3rem 2rem;
+                font-size: 1rem;
             }
             .footer-logo {
-                font-size: 1rem;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            .copyright {
+                margin-top: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">ALUMINUM<span>TARIFFS</span>.COM</div>
             <nav>
                 <a href="#dashboard">Tariff Tracker</a>
-                <a href="#timeline">Policy Timeline</a>
-                <a href="#contact">Acquire Domain</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="alert-badge">LATEST: 25% SECTION 232 TARIFFS EFFECTIVE FEB 2025</div>
-        <h1>Definitive Aluminum Tariff Intelligence for Global Trade Practices</h1>
-        <p>Monitor real-time tariff changes, analyze impacts, and advise clients with this turnkey legal resource.</p>
-        <a href="#dashboard" class="btn">Explore Live Dashboard</a>
-    </section>
-
-    <!-- Main Content -->
-    <div class="container">
-        <h2 class="section-title" id="dashboard">Live Aluminum Tariff Tracker</h2>
-        <p>Current Section 232 tariffs and exemptions as of <strong>February 15, 2025</strong>:</p>
-        <div class="dashboard">
-            <div class="filters">
-                <div>
-                    <label for="country">Country/Region</label>
-                    <select id="country">
-                        <option value="all">All Countries</option>
-                        <option value="china">China</option>
-                        <option value="eu">European Union</option>
-                        <option value="canada">Canada</option>
-                        <option value="mexico">Mexico</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="product">Product Category</label>
-                    <select id="product">
-                        <option value="all">All Products</option>
-                        <option value="sheet">Aluminum Sheet</option>
-                        <option value="foil">Aluminum Foil</option>
-                        <option value="extrusions">Extrusions</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="date">Effective Date</label>
-                    <input type="date" id="date" value="2025-02-15">
-                </div>
-            </div>
-            <table class="tariff-table">
-                <thead>
-                    <tr>
-                        <th>HTS Code</th>
-                        <th>Product Description</th>
-                        <th>Country</th>
-                        <th>Base Rate</th>
-                        <th>Section 232</th>
-                        <th>Total Duty</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>7606.11</td>
-                        <td>Aluminum sheet, not alloyed</td>
-                        <td>China</td>
-                        <td>6.5%</td>
-                        <td class="highlight">25.0%</td>
-                        <td class="highlight">31.5%</td>
-                    </tr>
-                    <tr>
-                        <td>7607.11</td>
-                        <td>Aluminum foil, not backed</td>
-                        <td>Germany</td>
-                        <td>3.2%</td>
-                        <td class="highlight">25.0%</td>
-                        <td class="highlight">28.2%</td>
-                    </tr>
-                    <tr>
-                        <td>7604.21</td>
-                        <td>Aluminum bars/rods</td>
-                        <td>Canada</td>
-                        <td>1.5%</td>
-                        <td>0.0%</td>
-                        <td>1.5%</td>
-                    </tr>
-                    <tr>
-                        <td>7610.90</td>
-                        <td>Aluminum structures</td>
-                        <td>Mexico</td>
-                        <td>2.0%</td>
-                        <td>0.0%</td>
-                        <td>2.0%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <h2 class="section-title" id="timeline">Section 232 Aluminum Tariff Timeline</h2>
-        <p>Key policy developments and legal implications:</p>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Mar 2018</div>
-                <h3>Initial Section 232 Tariffs Imposed</h3>
-                <p>10% global tariff on aluminum imports under Section 232 of the Trade Expansion Act. Immediate exemptions for Canada and Mexico created complex compliance requirements.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Jan 2020</div>
-                <h3>TRQ System Implementation</h3>
-                <p>Tariff-rate quotas established for EU, UK, and Japan, replacing absolute tariffs. Created new administrative law challenges and exclusion request opportunities.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Feb 2025</div>
-                <h3>New Executive Orders</h3>
-                <p>All remaining exemptions eliminated, duties increased to 25%, and product scope expanded to include aluminum derivatives. Expected to generate significant litigation.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Acquisition CTA -->
-    <section class="acquisition-cta" id="contact">
-        <h2>This Domain and Platform Are Available for Acquisition</h2>
-        <p>AluminumTariffs.com represents a turnkey solution for law firms seeking to establish market leadership in Section 232 trade matters. The complete package includes:</p>
-        <ul style="max-width: 600px; margin: 1rem auto 2rem; text-align: left; opacity: 0.9;">
-            <li>Premium domain with established SEO value</li>
-            <li>Custom tariff tracking infrastructure</li>
-            <li>Client-ready dashboards and reporting tools</li>
-            <li>Regulatory alert systems</li>
-        </ul>
-        <a href="mailto:acquisition@aluminumtariffs.com?subject=Domain%20Acquisition%20Inquiry" class="btn">Request Acquisition Details</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">ALUMINUM<span>TARIFFS</span>.COM</div>
-        <p>A premium resource for international trade practices</p>
-        <div class="copyright">
-            &copy; 2025 All rights reserved
-        </div>
-    </footer>
-</body>
-</html>
+                <a href="#timeline
